@@ -17,7 +17,7 @@ map2:{[s;m]
     s:({[s;m]
         i:getadji[s;m];
         s[;1]+:df:-1+{?[x<0;x;1]}raze (last each 0Wj,/:m[;1][i]) - mx:-1+sum each s;
-        s,:(ns+1),'-[;(ns:m[;1][i][ni])] mx ni:where 0>df; // append new seed ranges if neccessary
+        s,:(ns+1),'-[;(ns:m[;1][i][ni])] mx ni:where 0>df; // break up seed range if it spans multiple src ranges
         s
         }[;m]/) s;
 
