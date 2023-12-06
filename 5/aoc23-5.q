@@ -20,7 +20,6 @@ map2:{[s;m]
         s,:(ns+1),'-[;(ns:m[;1][i][ni])] mx ni:where 0>df; // break up seed range if it spans multiple src ranges
         s
         }[;m]/) s;
-
     s[;0]:last each s[;0],'s[;0]+m[;2] getadji[s;m];
     s
     }
