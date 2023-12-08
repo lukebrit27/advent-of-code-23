@@ -5,12 +5,12 @@
 // FULL HOUSE - 2 distinct cards, 5 cards matching another card
 // 4 OF A KIND - 2 distinct cards, 4 cards matching another card
 // 5 OF A KIND - 1 distinct card, 5 cards matching another card
-mode:{where max[c]=c:count each d:group x where not null x};
+mode:{where max[c]=c:count each group x where not null x};
 gettyp:{[hds]
     tys:{x!til count x}(0N 0N;5 0;4 2;3 4;3 3;2 5;2 4;1 5);
     tys {(count distinct x),"j"$sum (0=next d)|0=d:deltas asc x:$[0N in x;^[;x](|/)mode x;x]} each hds
     }
-rankhds:{[t;hds]1+rank t,'rank hds}
+rankhds:{[t;hds]1+rank t,'hds}
 
 pt1:{
     x:" " vs/: x;
